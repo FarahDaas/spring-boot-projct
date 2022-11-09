@@ -18,7 +18,7 @@ import com.project.med.serviceimplement.medcinimplement;
 
 @RestController
 @CrossOrigin("*")
-public class HomeController {
+public class MedcinController {
 	@Autowired
 	private medcinimplement medcinimpl;
 	@RequestMapping(value = "/savemedcin",method=RequestMethod.POST, consumes="application/json")
@@ -43,4 +43,6 @@ public class HomeController {
 		medcinimpl.deletmedcin(id);
 		return "medcin deleted!";
 	}
+	
+	
 }
