@@ -1,0 +1,60 @@
+<div class="container">
+  
+  <form #f="ngForm" (ngSubmit)="add(f)">
+    <div class="form-group" >
+      <label for="exampleFormControlInput1">firstname</label>
+      <input type="text" class="form-control"  placeholder="firstname" required name="firstname" #firstname="ngModel" minlength="2" maxlength="20" ngModel>
+    </div>
+    
+    <div class="alert alert-danger" *ngIf="firstname.errors?.required && firstname.touched ">Firstname is required</div>
+    <div class="alert alert-danger" *ngIf="firstname.errors?.minlength && firstname.touched ">Firstname must be minimum 2 caractere</div>
+   
+    <div class="form-group"  >
+        <label for="exampleFormControlInput1">lastname</label>
+        <input type="text" class="form-control"  placeholder="lastname" required name="lastname" #lastname="ngModel"  minlength="2" maxlength="20" ngModel>
+      </div>
+      
+      <div class="alert alert-danger" *ngIf="lastname.errors?.required && lastname.touched ">lasttname is required</div>
+      <div class="alert alert-danger" *ngIf="lastname.errors?.minlength && lastname.touched ">lastname must be minimum 2 caractere</div>
+      
+      <div class="form-group"  >
+        <label for="exampleFormControlInput1">Email</label>
+        <input type="email" class="form-control"  placeholder="name@example.com" email required name="email" #email="ngModel" ngModel>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched ">email is required</div>
+      <div class="alert alert-danger" *ngIf="email.errors?.email && email.touched ">the input must be email not string</div>
+      
+      <div class="form-group"  >
+        <label for="exampleFormControlInput1">Phone</label>
+        <input type="number" class="form-control"  placeholder="Phone" required name="phone" #phone="ngModel" ngModel>
+      </div>
+      
+      <div class="alert alert-danger" *ngIf="phone.errors?.required && phone.touched ">phone is required</div>
+
+      <div class="form-group"  >
+        <label for="exampleFormControlInput1">Adresse</label>
+        <input type="text" class="form-control"  placeholder="Adresse" required name="adresse" #adresse="ngModel" ngModel>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="adresse.errors?.required && adresse.touched ">adresse is required</div>
+
+      <div class="form-group"  >
+        <label for="exampleFormControlInput1">gender</label>
+        <input type="text" class="form-control"  placeholder="gender" required name="gender" #gender="ngModel" ngModel>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="firstname.errors?.required && gender.touched ">gender is required</div>
+
+      <div class="form-group"  >
+        <label for="exampleFormControlInput1">birthday</label>
+        <input type="date" class="form-control"  placeholder="dd-mm-yyyy" required name="birthday" #birthday="ngModel"  ngModel>
+      </div>
+       
+      <div class="alert alert-danger" *ngIf="firstname.errors?.required && birthday.touched ">birthday is required</div>
+<div class="alert alert-danger" *ngIf="messageErr">{{messageErr}}</div>
+      <button class="btn btn-primery" [disabled]="f.invalid"  style="width: 30%;background-color: #ecafdb ;color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Add Medcin</button>
+    
+  </form>
+  
+</div>
